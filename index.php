@@ -1,6 +1,6 @@
 <html>
 <head>
-<style>body { background-color: white }</style>
+<style>body { background-color: black }</style>
 </head>
 <body>
 <center>
@@ -13,7 +13,8 @@ echo '<p style="color: gold">
 echo '<br>Server IP:'.$_SERVER['SERVER_ADDR'];
 ?>
 <br>
-Version 2.0
+Version 2.1
+<font color="red"><h1>Hello From Canada!</h1></font>      
 </center>
 </body>
 </html>
