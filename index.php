@@ -4,17 +4,17 @@
 </head>
 <body>
 <center>
-<font color="green"><h1>Hello from Denis Astahov!</h1></font>
-<img src="logo.png" width=400>
+<font color="green"><h1>Vsem Privet!</h1></font>
+<img src="logo.png" width=500>
 
 <?php
 echo '<p style="color: gold">
-      This is AWS Elastic Beanstalk WebServer with PHP App!!!!!!!!!!!!!!</p>';
+      This is AWS Elastic Beanstalk WebServer with PHP App!!!!!!!!!!</p>';
 echo '<br>Server IP:'.$_SERVER['SERVER_ADDR'];
 ?>
 <br>
-Version 2.2
-<font color="red"><h1>Hello From Canada!</h1></font>      
+Version 2.3
+<font color="gold"><h1>Hello From Canada!</h1></font>      
 </center>
 </body>
 </html>
