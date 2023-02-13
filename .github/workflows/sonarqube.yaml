@@ -22,5 +22,4 @@ jobs:
     - name: SonarQube Scanner
       uses: sonarsource/sonarcloud-github-action@master
       with:
-        SONAR_TOKEN   : ${SONAR_TOKEN}
         projectBaseDir: ./
