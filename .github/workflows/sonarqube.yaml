@@ -1,0 +1,26 @@
+# This GHA Workflow to run SonarQube Scanner for PHP code
+name: SonarQube Scanner
+
+env:
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  sonarqube:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Git clone this repo
+      id  : git
+      uses: actions/checkout@v3
+
+    - name: Setup SonarQube Scanner
+      uses: SonarSource/sonarcloud-github-action@v1
+      with:
+        sonarcloud.login: ${SONAR_TOKEN}
+
+    - name: Run SonarScanner Scanner
+      run: sonar-scanner
