@@ -23,3 +23,7 @@ jobs:
       uses: sonarsource/sonarcloud-github-action@master
       with:
         projectBaseDir: .
+        args: >
+          -Dsonar.organization=adv4000
+          -Dsonar.projectKey=adv4000_php_new
+          -Dsonar.sources=./
