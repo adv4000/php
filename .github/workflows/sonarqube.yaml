@@ -2,11 +2,12 @@
 name: SonarQube Scanner
 
 env:
-  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  SONAR_TOKEN : ${{ secrets.SONAR_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 on:
   pull_request:
-    types: [opened, reopened]
+    types: [opened, reopened, synchronize]
 
 jobs:
   sonarqube:
@@ -16,11 +17,14 @@ jobs:
     - name: Git clone this repo
       id  : git
       uses: actions/checkout@v3
-
-    - name: Setup SonarQube Scanner
-      uses: SonarSource/sonarcloud-github-action@v1
       with:
-        sonarcloud.login: ${SONAR_TOKEN}
+        fetch-depth: 0
 
-    - name: Run SonarScanner Scanner
-      run: sonar-scanner
+    - name: SonarQube Scanner
+      uses: sonarsource/sonarcloud-github-action@master
+      with:
+        projectBaseDir: .
+        args: >
+          -Dsonar.organization=adv4000
+          -Dsonar.projectKey=adv4000_php_new
+          -Dsonar.sources=./
