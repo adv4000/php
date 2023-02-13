@@ -16,11 +16,11 @@ jobs:
     - name: Git clone this repo
       id  : git
       uses: actions/checkout@v3
-
-    - name: Setup SonarQube Scanner
-      uses: SonarSource/sonarcloud-github-action@v1
       with:
-        sonarcloud.login: ${SONAR_TOKEN}
+        fetch-depth: 0
 
-    - name: Run SonarScanner Scanner
-      run: sonar-scanner
+    - name: SonarQube Scanner
+      uses: sonarsource/sonarcloud-github-action@master
+      with:
+        SONAR_TOKEN   : ${SONAR_TOKEN}
+        projectBaseDir: ./
