@@ -5,5 +5,5 @@ function bar() {
 }
 
 function foo($name) {
-    mysql_query("SELECT * FROM foo WHERE name = '$name'");
+     mysql_query("SELECT * FROM foo WHERE name = '$name'");
 }
