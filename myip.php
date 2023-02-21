@@ -1,1 +1,1 @@
-<?php echo ''.$_SERVER['REMOTE_ADDR']; ?>
+<?php echo ''.$_SERVER['REMOTE_ADDR'];  ?>
